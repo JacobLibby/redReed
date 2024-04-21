@@ -1,0 +1,28 @@
+
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+
+input {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    font-size: 1.25rem;
+    /* width: 90%; */
+    margin-left: 5px;
+}
+
+input:focus {
+    outline: none;
+}
+#searchicon {
+    color: #77002e;
+    margin-left: 5px;
+    padding-bottom: 2px;
+}

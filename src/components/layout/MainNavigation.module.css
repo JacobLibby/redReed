@@ -1,35 +1,49 @@
 .header {
     width: 100%;
-    height: 5rem;
+    height:80px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    /* align-items: center; */
+    /* justify-content: space-between; */
     background-color: #77002e;
-    padding: 0 10%;
+    padding: 0 5%;
+    padding-top: 15px;
   }
   
   .logo {
     font-size: 2rem;
     color: white;
     font-weight: bold;
+    min-width: 200px;
   }
   
   .header ul {
     list-style: none;
     margin: 0;
-    padding: 0;
+    /* padding: 0; */
     display: flex;
-    align-items: baseline;
+    padding-top: 5px;
+    justify-items: space-around;
+    flex-direction:row;
   }
   
   .header li {
-    margin-left: 3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    min-width: 125px;
+    display: flex;
+    flex-direction: column;
+    /* direction: */
+    /* align-items:space-evenly; */
+    /* align-items: center;
+    justify-self: center; */
+    
   }
   
   .header a {
     text-decoration: none;
     font-size: 1.5rem;
     color: #fcb8d2;
+    align-self: center;
   }
   
   .header a:hover,

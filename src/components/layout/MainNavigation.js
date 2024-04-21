@@ -8,6 +8,8 @@ import classes from "./MainNavigation.module.css";
 import FavoritesContext from "../../store/favorites-context";
 import { useAuth } from "../../store/auth-context";
 import LogOut from "../sign-in/LogOut";
+import SearchBar from "./SearchBar";
+import Search from "./Search";
 
 function MainNavigation() {
   const favoritesCtx = useContext(FavoritesContext);
@@ -31,14 +33,14 @@ function MainNavigation() {
   return (
     <>
       <header className={classes.header}>
-        <div className={classes.logo}>React Meetups</div>
+        <div className={classes.logo}>Red Reed</div>
         <nav>
           <ul>
             <li>
-              <Link to="/">All Meetups</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/new-meetup">Add New Meetup</Link>
+              <Link to="/new-meetup">My Books</Link>
             </li>
             <li>
               <Link to="/favorites">
@@ -47,6 +49,10 @@ function MainNavigation() {
                   {favoritesCtx.totalFavorites}
                 </span>
               </Link>
+            </li>
+
+            <li>
+              <Search />
             </li>
 
             {currentUser  && (
