@@ -5,15 +5,16 @@ import classes from "./Search.module.css";
 
 function Search(props) {
   const [results, setResults] = useState([]);
+  const [focus, setFocus] = useState(false);
 
   return (
     <div className={classes.outer}>
       <div className={classes.inputwrapper}>
         <div className={classes.searchbarcontainer}>
-          <SearchBar setResults={setResults} />
+          <SearchBar setResults={setResults} setFocus={setFocus}/>
         </div>
       </div>
-      <SearchResultsList results={results} />
+      {focus && <SearchResultsList results={results}/>}
     </div>
   );
 }

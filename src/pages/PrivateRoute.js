@@ -29,8 +29,14 @@ import { RedirectFunction } from "react-router-dom";
 
 
 export default function PrivateRoutes() {
-    const { currentUser } = useAuth();
-    let  userid = localStorage.getItem("token") == null ? false : true;
+    let { currentUser } = useAuth();
+    console.log(currentUser)
+    if (currentUser){
+        console.log(" IT IS TRUE")
+    } else {
+        console.log(" IT IS FALSE")
+    }
+    // let  userid = localStorage.getItem("token") == null ? false : true;
     return (
         <>
             {currentUser ? <Outlet  /> : <Navigate to="/sign-in" />};

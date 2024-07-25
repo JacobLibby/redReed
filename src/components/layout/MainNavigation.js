@@ -34,7 +34,7 @@ function MainNavigation() {
     <>
       <header className={classes.header}>
         <div className={classes.logo}>Red Reed</div>
-        <nav>
+        <nav className={classes.nav}>
           <ul>
             <li>
               <Link to="/">Home</Link>

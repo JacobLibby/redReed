@@ -5,24 +5,50 @@ import { useState } from "react";
 //import "../store/auth-context"
 import { AuthProvider } from "../store/auth-context";
 import { useAuth } from "../store/auth-context";
+
 import app from "../Firebase";
+import { getAuth, signInWithCredential } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+
+
 
 function SignInPage() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const { signIn } = useAuth();
-
+  const { signIn } = useAuth(); // added getAuth in parentheses to try to fix 400 error on signin
+  const auth = getAuth();
   async function signInHandler(signInData) {
+    
     try {
+      console.log(signInData)
       setError("");
       setLoading(true);
-      await signIn(signInData.email, signInData.password);
+      // vvv Testing Zone vvv
+      console.log(auth)
+      console.log(signIn)
+      console.log(auth.currentUser)
+      // ^^^ Testing Zone ^^^
+
+      // await signIn(signInData.email, signInData.password); // THE PROBLEM - CAUSING 400 ERROR WHEN ATTEMPTING TO SIGN IN
+      // await signIn("test@test.test", "password")
+      await signInWithEmailAndPassword(auth, signInData.email, signInData.password)
+      console.log("AUTH")
+      console.log(auth)
+      console.log(auth.currentUser)
+      // await signInWithCredential(auth, signInWithEmailAndPassword(auth, signInData.email, signInData.password))
+      console.log("NAVIGATING HOME")
+      
       navigate('/', { replace: true });
+      // SIGNED IN
+      console.log("SIGNED IN")
     } catch {
       setError("Failed to sign in");
+      console.log("FAILED TO LOG IN")
     }
     setLoading(false);
+    
+   
   }
 
 

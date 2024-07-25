@@ -22,6 +22,7 @@ function CreateAccountPage() {
       setError("");
       setLoading(true);
       await createAccount(accountData.email, accountData.password);
+      
       navigate('/', { replace: true });
     } catch {
       setError("Failed to create an account");

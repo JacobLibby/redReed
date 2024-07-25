@@ -18,8 +18,11 @@ function App() {
     <AuthProvider>
       <Layout>
         <Routes>
-        <Route exact element={<PrivateRoute  />}>
+          <Route exact element={<PrivateRoute  />}>
             <Route exact path="/" element={<AllMeetupsPage />} />
+          </Route>
+          <Route exact element={<PrivateRoute  />}>
+            <Route exact path="/home" element={<FavoritesPage />} />
           </Route>
           {/* <PrivateRoute exact path="/" element={<AllMeetupsPage />} /> */}
           <Route exact element={<PrivateRoute  />}>

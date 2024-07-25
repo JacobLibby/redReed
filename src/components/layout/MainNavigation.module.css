@@ -3,12 +3,14 @@
     height:80px;
     display: flex;
     /* align-items: center; */
-    /* justify-content: space-between; */
+    justify-content: space-between;
     background-color: #77002e;
     padding: 0 5%;
     padding-top: 15px;
   }
-  
+  .nav {
+    justify-content: right;
+  }
   .logo {
     font-size: 2rem;
     color: white;
@@ -22,8 +24,8 @@
     /* padding: 0; */
     display: flex;
     padding-top: 5px;
-    justify-items: space-around;
     flex-direction:row;
+    justify-items:flex-end;
   }
   
   .header li {
